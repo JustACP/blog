@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Lombok的食用 | Re1ife&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Lombok的食用在编写项目的时候对类内部成员字段封装的时候，需要编写大量的 getset方法，若字段名称改变时候又要挨个修改比较麻烦。通过Lombok（小辣椒）就可以解决这个问题。 让我们来对比一下： 1234567891011121314public class Student&#123;    private Integer sid;    private String name;    p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lombok的食用">
+<meta property="og:url" content="https://justacp.github.io/blog/2022/07/04/Lombok%E7%9A%84%E9%A3%9F%E7%94%A8/index.html">
+<meta property="og:site_name" content="Re1ife&#39;s Blog">
+<meta property="og:description" content="Lombok的食用在编写项目的时候对类内部成员字段封装的时候，需要编写大量的 getset方法，若字段名称改变时候又要挨个修改比较麻烦。通过Lombok（小辣椒）就可以解决这个问题。 让我们来对比一下： 1234567891011121314public class Student&#123;    private Integer sid;    private String name;    p">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-04T15:11:00.000Z">
+<meta property="article:modified_time" content="2024-03-10T06:56:19.855Z">
+<meta property="article:author" content="Re1ife">
+<meta property="article:tag" content="Lombok">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Re1ife's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Re1ife&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">天上星河转，人间帘幕垂。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://justacp.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Lombok的食用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2022/07/04/Lombok%E7%9A%84%E9%A3%9F%E7%94%A8/" class="article-date">
+  <time class="dt-published" datetime="2022-07-04T15:11:00.000Z" itemprop="datePublished">2022-07-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Lombok的食用
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Lombok的食用"><a href="#Lombok的食用" class="headerlink" title="Lombok的食用"></a>Lombok的食用</h1><p>在编写项目的时候对类内部成员字段封装的时候，需要编写大量的 <code>getset</code>方法，若字段名称改变时候又要挨个修改比较麻烦。<br>通过Lombok（小辣椒）就可以解决这个问题。<br><img src="data:image/webp;base64,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" alt="20220704175417"></p>
+<p>让我们来对比一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer sid;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String sex;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Student</span><span class="params">(Integer sid,String name,String sex)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.sid = sid;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.sex = sex;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">getSid</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sid;</span><br><span class="line">    &#125;</span><br><span class="line">    .........</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>食用 Lombok 之后：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@Setter</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer sid;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String sex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>只有这么短。</p>
+<h2 id="配置Lombok"><a href="#配置Lombok" class="headerlink" title="配置Lombok"></a>配置Lombok</h2><p>和 <code>JDBC</code>一样，</p>
+<ol>
+<li>到 <code>ProjectLombok</code>官网上下载jar包</li>
+<li>添加到项目 <code>lib</code>文件夹里</li>
+<li><code>F1</code>键 输入 <code>Classpath</code>添加jar包就可以了<br><img src="data:image/webp;base64,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" alt="20220704181602"></li>
+<li>vscode 插件搜索lombok并且安装重启Lombok就行了</li>
+</ol>
+<p>Lombok是一种插件化注解API，是通过添加注解来实现的，然后在javac进行编译的时候，进行处理。</p>
+<p>Java的编译过程可以分成三个阶段：</p>
+<p><img src="data:image/webp;base64,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" alt="img"></p>
+<ol>
+<li>所有源文件会被解析成语法树。</li>
+<li>调用注解处理器。如果注解处理器产生了新的源文件，新文件也要进行编译。</li>
+<li>最后，语法树会被分析并转化成类文件。</li>
+</ol>
+<p>实际上在上述的第二阶段，会执行*<a target="_blank" rel="noopener" href="https://github.com/rzwitserloot/lombok/blob/master/src/core/lombok/core/AnnotationProcessor.java">lombok.core.AnnotationProcessor</a>*，它所做的工作就是我们上面所说的，修改语法树。</p>
+<h2 id="食用Lombok"><a href="#食用Lombok" class="headerlink" title="食用Lombok"></a>食用Lombok</h2><ul>
+<li><p>我们通过添加 <code>@Getter</code>和 <code>@Setter</code>来为当前类的所有字段生成get&#x2F;set方法，他们可以添加到类或是字段上</p>
+<ul>
+<li>注意静态字段不会生成，<code>final</code>字段无法生成set方法。</li>
+<li>我们还可以使用@Accessors来控制生成Getter和Setter的样式。<ul>
+<li>Accessor(chain &#x3D; true); 使得类支持链式</li>
+<li>Accessor(fluent &#x3D; true); 创建的方法不再有 <code>setget</code>,重载了。</li>
+</ul>
+</li>
+<li>@Getter(AccessLevel.PRIVATE) &#x2F;&#x2F;修改private</li>
+</ul>
+</li>
+<li><p>我们通过添加 <code>@ToString</code>来为当前类生成预设的toString方法。</p>
+<ul>
+<li>测试打印信息LombokStudent(sid&#x3D;1, name&#x3D;张强, sex&#x3D;男)</li>
+<li>includeFieldNames &#x3D; false , 前面的 sid, name,sex 不再打印</li>
+<li>exclude &#x3D; {“name”,…} 省略name和…字段</li>
+<li>of 和 exclude相反</li>
+<li>callSuper &#x3D; true &#x2F;&#x2F;输出父类toString结果</li>
+<li>doNotUseGetters &#x3D; true &#x2F;&#x2F;不使用 Getter 来输出</li>
+<li>onlyExplicitlyIncluded &#x3D; true</li>
+<li>.Include(rank &#x3D; n) 设置输出顺序， n越大越在前面</li>
+</ul>
+</li>
+<li><p>通过添加 <code>@EqualsAndHashCode</code>来快速生成比较和哈希值方法。</p>
+<ul>
+<li>若我们比较的类是注解类的子类并且数据项相同即为真</li>
+</ul>
+</li>
+<li><p>通过添加 <code>@AllArgsConstructor</code>和 <code>@NoArgsConstructor</code>来快速生成全参构造和无参构造。</p>
+<ul>
+<li><code>staticName = &quot;create&quot;</code>  将构造函数命名为create</li>
+<li><code>force = true</code> 会给final一个默认值。</li>
+</ul>
+</li>
+<li><p>我们可以添加 <code>@RequiredArgsConstructor</code>来快速生成参数只包含 <code>final</code>或被标记为 <code>@NonNull</code>的成员字段。</p>
+</li>
+<li><p>使用 <code>@Data</code>能代表 <code>@Setter</code>、<code>@Getter</code>、<code>@RequiredArgsConstructor</code>、<code>@ToString</code>、<code>@EqualsAndHashCode</code>全部注解。</p>
+<ul>
+<li>一旦使用 <code>@Data</code>就不建议此类有继承关系，因为 <code>equal</code>方法可能不符合预期结果（尤其是仅比较子类属性）。</li>
+</ul>
+</li>
+<li><p>使用 <code>@Value</code>与 <code>@Data</code>类似，但是并不会生成setter并且成员属性都是final的。</p>
+</li>
+<li><p>使用 <code>@SneakyThrows</code>来自动生成try-catch代码块。  我觉得这个非常不错</p>
+</li>
+<li><p>使用 <code>@Cleanup</code>作用与局部变量，在最后自动调用其 <code>close()</code>方法（可以自由更换）</p>
+</li>
+<li><p>使用 <code>@Builder</code>来快速生成建造者模式。</p>
+<ul>
+<li>通过使用 <code>@Builder.Default</code>来指定默认值。</li>
+<li>通过使用 <code>@Builder.ObtainVia</code>来指定默认值的获取方式。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://justacp.github.io/blog/2022/07/04/Lombok%E7%9A%84%E9%A3%9F%E7%94%A8/" data-id="cltvfoksp0013akv0b49y5s7z" data-title="Lombok的食用" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Lombok/" rel="tag">Lombok</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2022/07/05/Maybatis%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%85%88%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Maybatis配置文件先解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2022/06/30/Java%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%BA%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">Java和数据库的事</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Life/">Life</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Project/">Project</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Study/">Study</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA/">技术理论</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/20/" rel="tag">20</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/AJAX/" rel="tag">AJAX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Collection/" rel="tag">Collection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Cookie/" rel="tag">Cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/DFS/" rel="tag">DFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/EarthOnline/" rel="tag">EarthOnline</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Filter/" rel="tag">Filter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/I-O/" rel="tag">I&#x2F;O</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/IEEE754/" rel="tag">IEEE754</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Image/" rel="tag">Image</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JDBC/" rel="tag">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JDK/" rel="tag">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JSON/" rel="tag">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JUL/" rel="tag">JUL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JavaSE/" rel="tag">JavaSE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Leetcode/" rel="tag">Leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Listener/" rel="tag">Listener</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Lombok/" rel="tag">Lombok</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Manjaro/" rel="tag">Manjaro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mariadb/" rel="tag">Mariadb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Maven/" rel="tag">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/NacosClient/" rel="tag">NacosClient</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/OpenCV/" rel="tag">OpenCV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/RPC/" rel="tag">RPC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/RabbitMQ/" rel="tag">RabbitMQ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Router/" rel="tag">Router</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/SPI/" rel="tag">SPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Servlet/" rel="tag">Servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Session/" rel="tag">Session</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/SpringCloud/" rel="tag">SpringCloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/SpringCloudAlibaba/" rel="tag">SpringCloudAlibaba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Thymeleaf/" rel="tag">Thymeleaf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Vector/" rel="tag">Vector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/VektRPC/" rel="tag">VektRPC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ZSET/" rel="tag">ZSET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E4%BA%8B%E5%8A%A1/" rel="tag">事务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E4%BB%A3%E7%90%86%E6%9C%BA%E5%88%B6/" rel="tag">代理机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" rel="tag">内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" rel="tag">分布式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%8E%8B%E7%BC%A9%E5%88%97%E8%A1%A8/" rel="tag">压缩列表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%8F%8D%E5%B0%84/" rel="tag">反射</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%93%88%E5%B8%8C/" rel="tag">哈希</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/" rel="tag">图片处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" rel="tag">垃圾回收</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%AD%97%E5%85%B8/" rel="tag">字典</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%AD%97%E8%8A%82%E7%A0%81/" rel="tag">字节码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%AE%9E%E4%B9%A0/" rel="tag">实习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/" rel="tag">寻址方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" rel="tag">微服务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%80%BB%E7%BB%93/" rel="tag">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%84%9F%E6%82%9F/" rel="tag">感悟</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%89%93%E5%8C%85/" rel="tag">打包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/" rel="tag">数据的存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA/" rel="tag">数据的表示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%95%B4%E6%95%B0%E9%9B%86%E5%90%88/" rel="tag">整数集合</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4/" rel="tag">机器指令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%A0%88/" rel="tag">栈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%A1%86%E6%9E%B6/" rel="tag">框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%B3%A8%E8%A7%A3/" rel="tag">注解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/" rel="tag">源码阅读</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%9B%91%E5%90%AC%E5%99%A8%E6%A8%A1%E5%BC%8F/" rel="tag">监听器模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" rel="tag">类加载器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/" rel="tag">类加载机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%B1%BB%E7%9A%84%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" rel="tag">类的文件结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%BB%A7%E6%89%BF/" rel="tag">继承</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" rel="tag">观察者模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%A7%86%E5%9B%BE/" rel="tag">视图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" rel="tag">计算机系统基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%B7%B3%E8%A1%A8/" rel="tag">跳表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%BD%AE%E5%AD%90/" rel="tag">轮子</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%BD%BB%E9%87%8F%E7%BA%A7RPC/" rel="tag">轻量级RPC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/20/" style="font-size: 10px;">20</a> <a href="/blog/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/blog/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/blog/tags/Collection/" style="font-size: 10px;">Collection</a> <a href="/blog/tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="/blog/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/blog/tags/EarthOnline/" style="font-size: 10px;">EarthOnline</a> <a href="/blog/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/blog/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/blog/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/blog/tags/IEEE754/" style="font-size: 10px;">IEEE754</a> <a href="/blog/tags/Image/" style="font-size: 10px;">Image</a> <a href="/blog/tags/JDBC/" style="font-size: 10px;">JDBC</a> <a href="/blog/tags/JDK/" style="font-size: 12px;">JDK</a> <a href="/blog/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/blog/tags/JUL/" style="font-size: 10px;">JUL</a> <a href="/blog/tags/JVM/" style="font-size: 14px;">JVM</a> <a href="/blog/tags/Java/" style="font-size: 20px;">Java</a> <a href="/blog/tags/JavaSE/" style="font-size: 18px;">JavaSE</a> <a href="/blog/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/blog/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/blog/tags/Listener/" style="font-size: 10px;">Listener</a> <a href="/blog/tags/Lombok/" style="font-size: 10px;">Lombok</a> <a href="/blog/tags/Manjaro/" style="font-size: 10px;">Manjaro</a> <a href="/blog/tags/Mariadb/" style="font-size: 10px;">Mariadb</a> <a href="/blog/tags/Maven/" style="font-size: 12px;">Maven</a> <a href="/blog/tags/MySQL/" style="font-size: 16px;">MySQL</a> <a href="/blog/tags/Mybatis/" style="font-size: 14px;">Mybatis</a> <a href="/blog/tags/NacosClient/" style="font-size: 10px;">NacosClient</a> <a href="/blog/tags/OpenCV/" style="font-size: 10px;">OpenCV</a> <a href="/blog/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/blog/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/blog/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/blog/tags/Redis/" style="font-size: 14px;">Redis</a> <a href="/blog/tags/Router/" style="font-size: 10px;">Router</a> <a href="/blog/tags/SPI/" style="font-size: 10px;">SPI</a> <a href="/blog/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/blog/tags/Session/" style="font-size: 10px;">Session</a> <a href="/blog/tags/Spring/" style="font-size: 12px;">Spring</a> <a href="/blog/tags/SpringCloud/" style="font-size: 12px;">SpringCloud</a> <a href="/blog/tags/SpringCloudAlibaba/" style="font-size: 10px;">SpringCloudAlibaba</a> <a href="/blog/tags/Thymeleaf/" style="font-size: 10px;">Thymeleaf</a> <a href="/blog/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/blog/tags/VektRPC/" style="font-size: 12px;">VektRPC</a> <a href="/blog/tags/ZSET/" style="font-size: 10px;">ZSET</a> <a href="/blog/tags/%E4%BA%8B%E5%8A%A1/" style="font-size: 10px;">事务</a> <a href="/blog/tags/%E4%BB%A3%E7%90%86%E6%9C%BA%E5%88%B6/" style="font-size: 10px;">代理机制</a> <a href="/blog/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" style="font-size: 10px;">内存管理</a> <a href="/blog/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 10px;">分布式</a> <a href="/blog/tags/%E5%8E%8B%E7%BC%A9%E5%88%97%E8%A1%A8/" style="font-size: 10px;">压缩列表</a> <a href="/blog/tags/%E5%8F%8D%E5%B0%84/" style="font-size: 10px;">反射</a> <a href="/blog/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 10px;">后端</a> <a href="/blog/tags/%E5%93%88%E5%B8%8C/" style="font-size: 10px;">哈希</a> <a href="/blog/tags/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/" style="font-size: 10px;">图片处理</a> <a href="/blog/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" style="font-size: 10px;">垃圾回收</a> <a href="/blog/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">多线程</a> <a href="/blog/tags/%E5%AD%97%E5%85%B8/" style="font-size: 10px;">字典</a> <a href="/blog/tags/%E5%AD%97%E8%8A%82%E7%A0%81/" style="font-size: 10px;">字节码</a> <a href="/blog/tags/%E5%AE%9E%E4%B9%A0/" style="font-size: 10px;">实习</a> <a href="/blog/tags/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/" style="font-size: 10px;">寻址方式</a> <a href="/blog/tags/%E5%BC%80%E5%8F%91/" style="font-size: 10px;">开发</a> <a href="/blog/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 10px;">微服务</a> <a href="/blog/tags/%E6%80%BB%E7%BB%93/" style="font-size: 10px;">总结</a> <a href="/blog/tags/%E6%84%9F%E6%82%9F/" style="font-size: 10px;">感悟</a> <a href="/blog/tags/%E6%89%93%E5%8C%85/" style="font-size: 10px;">打包</a> <a href="/blog/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/blog/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="/blog/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/" style="font-size: 10px;">数据的存储</a> <a href="/blog/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA/" style="font-size: 10px;">数据的表示</a> <a href="/blog/tags/%E6%95%B4%E6%95%B0%E9%9B%86%E5%90%88/" style="font-size: 10px;">整数集合</a> <a href="/blog/tags/%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4/" style="font-size: 10px;">机器指令</a> <a href="/blog/tags/%E6%A0%88/" style="font-size: 10px;">栈</a> <a href="/blog/tags/%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">框架</a> <a href="/blog/tags/%E6%B3%A8%E8%A7%A3/" style="font-size: 10px;">注解</a> <a href="/blog/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" style="font-size: 10px;">消息队列</a> <a href="/blog/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/" style="font-size: 10px;">源码阅读</a> <a href="/blog/tags/%E7%9B%91%E5%90%AC%E5%99%A8%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">监听器模式</a> <a href="/blog/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/blog/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" style="font-size: 10px;">类加载器</a> <a href="/blog/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/" style="font-size: 10px;">类加载机制</a> <a href="/blog/tags/%E7%B1%BB%E7%9A%84%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" style="font-size: 10px;">类的文件结构</a> <a href="/blog/tags/%E7%BB%A7%E6%89%BF/" style="font-size: 10px;">继承</a> <a href="/blog/tags/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">观察者模式</a> <a href="/blog/tags/%E8%A7%86%E5%9B%BE/" style="font-size: 10px;">视图</a> <a href="/blog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" style="font-size: 12px;">计算机系统基础</a> <a href="/blog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a> <a href="/blog/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a> <a href="/blog/tags/%E8%B7%B3%E8%A1%A8/" style="font-size: 10px;">跳表</a> <a href="/blog/tags/%E8%BD%AE%E5%AD%90/" style="font-size: 10px;">轮子</a> <a href="/blog/tags/%E8%BD%BB%E9%87%8F%E7%BA%A7RPC/" style="font-size: 10px;">轻量级RPC</a> <a href="/blog/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/08/">八月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/04/">四月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/11/02/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E5%8E%9F%E7%90%86/">分布式事务原理</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2023/09/21/20202020!/">20202020！</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2023/09/05/Redis%E7%9A%84%E6%95%B4%E6%95%B0%E9%9B%86%E5%90%88%E4%B8%8E%E5%8E%8B%E7%BC%A9%E5%88%97%E8%A1%A8/">Redis的整数集合与压缩列表</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2023/09/04/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%AE%9E%E4%B9%A0%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93%E4%B8%8E%E6%84%9F%E6%82%9F/">第一次实习的一些总结与感悟</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2023/09/03/Redis%E8%B7%B3%E8%A1%A8%E7%BB%93%E6%9E%84/">Redis跳表结构</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Re1ife<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

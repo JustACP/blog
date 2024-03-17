@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Cookie | Re1ife&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Cookie什么是Cookie？不是曲奇，它可以在浏览器中保存一些信息，并且在下次请求时，请求头中会携带这些信息。 我们可以编写一个测试用例来看看： 123Cookie cookie &#x3D; new Cookie(&quot;test&quot;, &quot;yyds&quot;);resp.addCookie(cookie);resp.sendRedirect(&quot;time&quot;);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cookie">
+<meta property="og:url" content="https://justacp.github.io/blog/2022/07/26/Cookie/index.html">
+<meta property="og:site_name" content="Re1ife&#39;s Blog">
+<meta property="og:description" content="Cookie什么是Cookie？不是曲奇，它可以在浏览器中保存一些信息，并且在下次请求时，请求头中会携带这些信息。 我们可以编写一个测试用例来看看： 123Cookie cookie &#x3D; new Cookie(&quot;test&quot;, &quot;yyds&quot;);resp.addCookie(cookie);resp.sendRedirect(&quot;time&quot;);">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-26T15:22:00.000Z">
+<meta property="article:modified_time" content="2024-03-10T06:56:16.550Z">
+<meta property="article:author" content="Re1ife">
+<meta property="article:tag" content="Cookie">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Re1ife's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Re1ife&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">天上星河转，人间帘幕垂。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://justacp.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Cookie" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2022/07/26/Cookie/" class="article-date">
+  <time class="dt-published" datetime="2022-07-26T15:22:00.000Z" itemprop="datePublished">2022-07-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/Study/">Study</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Cookie
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><p>什么是Cookie？不是曲奇，它可以在浏览器中保存一些信息，并且在下次请求时，请求头中会携带这些信息。</p>
+<p>我们可以编写一个测试用例来看看：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Cookie</span> <span class="variable">cookie</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cookie</span>(<span class="string">&quot;test&quot;</span>, <span class="string">&quot;yyds&quot;</span>);</span><br><span class="line">resp.addCookie(cookie);</span><br><span class="line">resp.sendRedirect(<span class="string">&quot;time&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (Cookie cookie : req.getCookies()) &#123;</span><br><span class="line">    System.out.println(cookie.getName() + <span class="string">&quot;: &quot;</span> + cookie.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们可以观察一下，在 <code>HttpServletResponse</code>中添加Cookie之后，浏览器的响应头中会包含一个 <code>Set-Cookie</code>属性，同时，在重定向之后，我们的请求头中，会携带此Cookie作为一个属性，同时，我们可以直接通过 <code>HttpServletRequest</code>来快速获取有哪些Cookie信息。</p>
+<p><img src="data:image/webp;base64,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" alt="点击查看源网页"></p>
+<p>还有这么神奇的事情吗？那么我们来看看，一个Cookie包含哪些信息：</p>
+<ul>
+<li>name   -   Cookie的名称，Cookie一旦创建，名称便不可更改</li>
+<li>value  -   Cookie的值，如果值为Unicode字符，需要为字符编码。如果为二进制数据，则需要使用BASE64编码</li>
+<li>maxAge  -  Cookie失效的时间，单位秒。如果为正数，则该Cookie在maxAge秒后失效。如果为负数，该Cookie为临时Cookie，关闭浏览器即失效，浏览器也不会以任何形式保存该Cookie。如果为0，表示删除该Cookie。默认为-1。</li>
+<li>secure  -  该Cookie是否仅被使用安全协议传输。安全协议。安全协议有HTTPS，SSL等，在网络上传输数据之前先将数据加密。默认为false。</li>
+<li>path  -  Cookie的使用路径。如果设置为“&#x2F;sessionWeb&#x2F;”，则只有contextPath为“&#x2F;sessionWeb”的程序可以访问该Cookie。如果设置为“&#x2F;”，则本域名下contextPath都可以访问该Cookie。注意最后一个字符必须为“&#x2F;”。</li>
+<li>domain  -  可以访问该Cookie的域名。如果设置为“.google.com”，则所有以“google.com”结尾的域名都可以访问该Cookie。注意第一个字符必须为“.”。</li>
+<li>comment  -  该Cookie的用处说明，浏览器显示Cookie信息的时候显示该说明。</li>
+<li>version  -  Cookie使用的版本号。0表示遵循Netscape的Cookie规范，1表示遵循W3C的RFC 2109规范</li>
+</ul>
+<p>我们发现，最关键的其实是 <code>name</code>、<code>value</code>、<code>maxAge</code>、<code>domain</code>属性。<br>我们来尝试修改一下maxAge来看看失效时间：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cookie.setMaxAge(<span class="number">20</span>);</span><br></pre></td></tr></table></figure>
+
+<p>设定为20秒，我们可以直接看到，响应头为我们设定了20秒的过期时间。20秒内访问都会携带此Cookie，而超过20秒，Cookie消失。</p>
+<p>既然了解了Cookie的作用，我们就可以通过使用Cookie来实现记住我功能，我们可以将用户名和密码全部保存在Cookie中，如果访问我们的首页时携带了这些Cookie，那么我们就可以直接为用户进行登陆，如果登陆成功则直接跳转到首页，如果登陆失败，则清理浏览器中的Cookie。</p>
+<p>那么首先，我们先在前端页面的表单中添加一个勾选框：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;记住我&quot;</span> <span class="attr">name</span>=<span class="string">&quot;remember-me&quot;</span>&gt;</span></span><br><span class="line">        记住我</span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>接着，我们在登陆成功时进行判断，如果用户勾选了记住我，那么就讲Cookie存储到本地：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(map.containsKey(<span class="string">&quot;remember-me&quot;</span>))&#123;   <span class="comment">//若勾选了勾选框，那么会此表单信息</span></span><br><span class="line">    <span class="type">Cookie</span> <span class="variable">cookie_username</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cookie</span>(<span class="string">&quot;username&quot;</span>, username);</span><br><span class="line">    cookie_username.setMaxAge(<span class="number">30</span>);</span><br><span class="line">    <span class="type">Cookie</span> <span class="variable">cookie_password</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cookie</span>(<span class="string">&quot;password&quot;</span>, password);</span><br><span class="line">    cookie_password.setMaxAge(<span class="number">30</span>);</span><br><span class="line">    resp.addCookie(cookie_username);</span><br><span class="line">    resp.addCookie(cookie_password);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后，我们修改一下默认的请求地址，现在一律通过 <code>http://localhost:8080/yyds/login</code>进行登陆，那么我们需要添加GET请求的相关处理：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">    Cookie[] cookies = req.getCookies();</span><br><span class="line">    <span class="keyword">if</span>(cookies != <span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">for</span> (Cookie cookie : cookies) &#123;</span><br><span class="line">            <span class="keyword">if</span>(cookie.getName().equals(<span class="string">&quot;username&quot;</span>)) username = cookie.getValue();</span><br><span class="line">            <span class="keyword">if</span>(cookie.getName().equals(<span class="string">&quot;password&quot;</span>)) password = cookie.getValue();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(username != <span class="literal">null</span> &amp;&amp; password != <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="comment">//登陆校验</span></span><br><span class="line">            <span class="keyword">try</span> (<span class="type">SqlSession</span> <span class="variable">sqlSession</span> <span class="operator">=</span> factory.openSession(<span class="literal">true</span>))&#123;</span><br><span class="line">                <span class="type">UserMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> sqlSession.getMapper(UserMapper.class);</span><br><span class="line">                <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> mapper.getUser(username, password);</span><br><span class="line">                <span class="keyword">if</span>(user != <span class="literal">null</span>)&#123;</span><br><span class="line">                    resp.sendRedirect(<span class="string">&quot;time&quot;</span>);</span><br><span class="line">                    <span class="keyword">return</span>;   <span class="comment">//直接返回</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    req.getRequestDispatcher(<span class="string">&quot;/&quot;</span>).forward(req, resp);   <span class="comment">//正常情况还是转发给默认的Servlet帮我们返回静态页面</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>现在，30秒内都不需要登陆，访问登陆页面后，会直接跳转到time页面。</p>
+<p>现在已经离我们理想的页面越来越接近了，但是仍然有一个问题，就是我们的首页，无论是否登陆，所有人都可以访问，那么，如何才可以实现只有登陆之后才能访问呢？这就需要用到Session了。</p>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://justacp.github.io/blog/2022/07/26/Cookie/" data-id="cltvfoksa0005akv02lpd0xc2" data-title="Cookie" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Cookie/" rel="tag">Cookie</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2022/07/27/Session-%E3%80%81-Filter%E5%92%8CListener/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Session 、 Filter和Listener
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2022/07/24/Servlet/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">Servlet</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Life/">Life</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Project/">Project</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Study/">Study</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA/">技术理论</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/20/" rel="tag">20</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/AJAX/" rel="tag">AJAX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Collection/" rel="tag">Collection</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Cookie/" rel="tag">Cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/DFS/" rel="tag">DFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/EarthOnline/" rel="tag">EarthOnline</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Filter/" rel="tag">Filter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/I-O/" rel="tag">I&#x2F;O</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/IEEE754/" rel="tag">IEEE754</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Image/" rel="tag">Image</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JDBC/" rel="tag">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JDK/" rel="tag">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JSON/" rel="tag">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JUL/" rel="tag">JUL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JavaSE/" rel="tag">JavaSE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Leetcode/" rel="tag">Leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Listener/" rel="tag">Listener</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Lombok/" rel="tag">Lombok</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Manjaro/" rel="tag">Manjaro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mariadb/" rel="tag">Mariadb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Maven/" rel="tag">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/NacosClient/" rel="tag">NacosClient</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/OpenCV/" rel="tag">OpenCV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/RPC/" rel="tag">RPC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/RabbitMQ/" rel="tag">RabbitMQ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Router/" rel="tag">Router</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/SPI/" rel="tag">SPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Servlet/" rel="tag">Servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Session/" rel="tag">Session</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/SpringCloud/" rel="tag">SpringCloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/SpringCloudAlibaba/" rel="tag">SpringCloudAlibaba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Thymeleaf/" rel="tag">Thymeleaf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Vector/" rel="tag">Vector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/VektRPC/" rel="tag">VektRPC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ZSET/" rel="tag">ZSET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E4%BA%8B%E5%8A%A1/" rel="tag">事务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E4%BB%A3%E7%90%86%E6%9C%BA%E5%88%B6/" rel="tag">代理机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" rel="tag">内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" rel="tag">分布式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%8E%8B%E7%BC%A9%E5%88%97%E8%A1%A8/" rel="tag">压缩列表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%8F%8D%E5%B0%84/" rel="tag">反射</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%93%88%E5%B8%8C/" rel="tag">哈希</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/" rel="tag">图片处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" rel="tag">垃圾回收</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%AD%97%E5%85%B8/" rel="tag">字典</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%AD%97%E8%8A%82%E7%A0%81/" rel="tag">字节码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%AE%9E%E4%B9%A0/" rel="tag">实习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/" rel="tag">寻址方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" rel="tag">微服务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%80%BB%E7%BB%93/" rel="tag">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%84%9F%E6%82%9F/" rel="tag">感悟</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%89%93%E5%8C%85/" rel="tag">打包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/" rel="tag">数据的存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA/" rel="tag">数据的表示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%95%B4%E6%95%B0%E9%9B%86%E5%90%88/" rel="tag">整数集合</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4/" rel="tag">机器指令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%A0%88/" rel="tag">栈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%A1%86%E6%9E%B6/" rel="tag">框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%B3%A8%E8%A7%A3/" rel="tag">注解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" rel="tag">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/" rel="tag">源码阅读</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%9B%91%E5%90%AC%E5%99%A8%E6%A8%A1%E5%BC%8F/" rel="tag">监听器模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" rel="tag">类加载器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/" rel="tag">类加载机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%B1%BB%E7%9A%84%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" rel="tag">类的文件结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%BB%A7%E6%89%BF/" rel="tag">继承</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" rel="tag">观察者模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%A7%86%E5%9B%BE/" rel="tag">视图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" rel="tag">计算机系统基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%B7%B3%E8%A1%A8/" rel="tag">跳表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%BD%AE%E5%AD%90/" rel="tag">轮子</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%BD%BB%E9%87%8F%E7%BA%A7RPC/" rel="tag">轻量级RPC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/20/" style="font-size: 10px;">20</a> <a href="/blog/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/blog/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/blog/tags/Collection/" style="font-size: 10px;">Collection</a> <a href="/blog/tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="/blog/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/blog/tags/EarthOnline/" style="font-size: 10px;">EarthOnline</a> <a href="/blog/tags/Filter/" style="font-size: 10px;">Filter</a> <a href="/blog/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/blog/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/blog/tags/IEEE754/" style="font-size: 10px;">IEEE754</a> <a href="/blog/tags/Image/" style="font-size: 10px;">Image</a> <a href="/blog/tags/JDBC/" style="font-size: 10px;">JDBC</a> <a href="/blog/tags/JDK/" style="font-size: 12px;">JDK</a> <a href="/blog/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/blog/tags/JUL/" style="font-size: 10px;">JUL</a> <a href="/blog/tags/JVM/" style="font-size: 14px;">JVM</a> <a href="/blog/tags/Java/" style="font-size: 20px;">Java</a> <a href="/blog/tags/JavaSE/" style="font-size: 18px;">JavaSE</a> <a href="/blog/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/blog/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/blog/tags/Listener/" style="font-size: 10px;">Listener</a> <a href="/blog/tags/Lombok/" style="font-size: 10px;">Lombok</a> <a href="/blog/tags/Manjaro/" style="font-size: 10px;">Manjaro</a> <a href="/blog/tags/Mariadb/" style="font-size: 10px;">Mariadb</a> <a href="/blog/tags/Maven/" style="font-size: 12px;">Maven</a> <a href="/blog/tags/MySQL/" style="font-size: 16px;">MySQL</a> <a href="/blog/tags/Mybatis/" style="font-size: 14px;">Mybatis</a> <a href="/blog/tags/NacosClient/" style="font-size: 10px;">NacosClient</a> <a href="/blog/tags/OpenCV/" style="font-size: 10px;">OpenCV</a> <a href="/blog/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/blog/tags/RPC/" style="font-size: 10px;">RPC</a> <a href="/blog/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/blog/tags/Redis/" style="font-size: 14px;">Redis</a> <a href="/blog/tags/Router/" style="font-size: 10px;">Router</a> <a href="/blog/tags/SPI/" style="font-size: 10px;">SPI</a> <a href="/blog/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/blog/tags/Session/" style="font-size: 10px;">Session</a> <a href="/blog/tags/Spring/" style="font-size: 12px;">Spring</a> <a href="/blog/tags/SpringCloud/" style="font-size: 12px;">SpringCloud</a> <a href="/blog/tags/SpringCloudAlibaba/" style="font-size: 10px;">SpringCloudAlibaba</a> <a href="/blog/tags/Thymeleaf/" style="font-size: 10px;">Thymeleaf</a> <a href="/blog/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/blog/tags/VektRPC/" style="font-size: 12px;">VektRPC</a> <a href="/blog/tags/ZSET/" style="font-size: 10px;">ZSET</a> <a href="/blog/tags/%E4%BA%8B%E5%8A%A1/" style="font-size: 10px;">事务</a> <a href="/blog/tags/%E4%BB%A3%E7%90%86%E6%9C%BA%E5%88%B6/" style="font-size: 10px;">代理机制</a> <a href="/blog/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" style="font-size: 10px;">内存管理</a> <a href="/blog/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 10px;">分布式</a> <a href="/blog/tags/%E5%8E%8B%E7%BC%A9%E5%88%97%E8%A1%A8/" style="font-size: 10px;">压缩列表</a> <a href="/blog/tags/%E5%8F%8D%E5%B0%84/" style="font-size: 10px;">反射</a> <a href="/blog/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 10px;">后端</a> <a href="/blog/tags/%E5%93%88%E5%B8%8C/" style="font-size: 10px;">哈希</a> <a href="/blog/tags/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/" style="font-size: 10px;">图片处理</a> <a href="/blog/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" style="font-size: 10px;">垃圾回收</a> <a href="/blog/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">多线程</a> <a href="/blog/tags/%E5%AD%97%E5%85%B8/" style="font-size: 10px;">字典</a> <a href="/blog/tags/%E5%AD%97%E8%8A%82%E7%A0%81/" style="font-size: 10px;">字节码</a> <a href="/blog/tags/%E5%AE%9E%E4%B9%A0/" style="font-size: 10px;">实习</a> <a href="/blog/tags/%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/" style="font-size: 10px;">寻址方式</a> <a href="/blog/tags/%E5%BC%80%E5%8F%91/" style="font-size: 10px;">开发</a> <a href="/blog/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 10px;">微服务</a> <a href="/blog/tags/%E6%80%BB%E7%BB%93/" style="font-size: 10px;">总结</a> <a href="/blog/tags/%E6%84%9F%E6%82%9F/" style="font-size: 10px;">感悟</a> <a href="/blog/tags/%E6%89%93%E5%8C%85/" style="font-size: 10px;">打包</a> <a href="/blog/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/blog/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="/blog/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8/" style="font-size: 10px;">数据的存储</a> <a href="/blog/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA/" style="font-size: 10px;">数据的表示</a> <a href="/blog/tags/%E6%95%B4%E6%95%B0%E9%9B%86%E5%90%88/" style="font-size: 10px;">整数集合</a> <a href="/blog/tags/%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4/" style="font-size: 10px;">机器指令</a> <a href="/blog/tags/%E6%A0%88/" style="font-size: 10px;">栈</a> <a href="/blog/tags/%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">框架</a> <a href="/blog/tags/%E6%B3%A8%E8%A7%A3/" style="font-size: 10px;">注解</a> <a href="/blog/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" style="font-size: 10px;">消息队列</a> <a href="/blog/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/" style="font-size: 10px;">源码阅读</a> <a href="/blog/tags/%E7%9B%91%E5%90%AC%E5%99%A8%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">监听器模式</a> <a href="/blog/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/blog/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" style="font-size: 10px;">类加载器</a> <a href="/blog/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/" style="font-size: 10px;">类加载机制</a> <a href="/blog/tags/%E7%B1%BB%E7%9A%84%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" style="font-size: 10px;">类的文件结构</a> <a href="/blog/tags/%E7%BB%A7%E6%89%BF/" style="font-size: 10px;">继承</a> <a href="/blog/tags/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">观察者模式</a> <a href="/blog/tags/%E8%A7%86%E5%9B%BE/" style="font-size: 10px;">视图</a> <a href="/blog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" style="font-size: 12px;">计算机系统基础</a> <a href="/blog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a> <a href="/blog/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a> <a href="/blog/tags/%E8%B7%B3%E8%A1%A8/" style="font-size: 10px;">跳表</a> <a href="/blog/tags/%E8%BD%AE%E5%AD%90/" style="font-size: 10px;">轮子</a> <a href="/blog/tags/%E8%BD%BB%E9%87%8F%E7%BA%A7RPC/" style="font-size: 10px;">轻量级RPC</a> <a href="/blog/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/08/">八月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/06/">六月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/04/">四月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2023/11/02/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E5%8E%9F%E7%90%86/">分布式事务原理</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2023/09/21/20202020!/">20202020！</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2023/09/05/Redis%E7%9A%84%E6%95%B4%E6%95%B0%E9%9B%86%E5%90%88%E4%B8%8E%E5%8E%8B%E7%BC%A9%E5%88%97%E8%A1%A8/">Redis的整数集合与压缩列表</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2023/09/04/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%AE%9E%E4%B9%A0%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93%E4%B8%8E%E6%84%9F%E6%82%9F/">第一次实习的一些总结与感悟</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2023/09/03/Redis%E8%B7%B3%E8%A1%A8%E7%BB%93%E6%9E%84/">Redis跳表结构</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Re1ife<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
